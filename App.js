@@ -1,10 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Navigator from './Navigator';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { ModalPortal } from 'react-native-modals';
 
+const store = createStore(() => {});
 export default function App() {
   return (
-    <Navigator />
+    <Provider store={store}>
+      <Navigator />
+      <ModalPortal />
+    </Provider>
   );
 }
 

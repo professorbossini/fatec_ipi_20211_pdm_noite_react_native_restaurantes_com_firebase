@@ -15,10 +15,7 @@ import 'firebase/firestore'
 import 'firebase/storage'
 import 'firebase/database'
 import * as firebase from 'firebase';
-import ENV from '../env';
-if (!firebase.apps.length){
-  firebase.initializeApp(ENV);
-}
+
 
 const firestore = firebase.firestore();
 const storage = firebase.storage();
@@ -55,7 +52,9 @@ const AdicionarRestauranteTela = (props) => {
       cidade: cidade,
       fotoURL: downloadURL,
       preco: preco,
-      categoria: categoria
+      categoria: categoria,
+      avaliacaoMedia: 0,
+      qtdeAvaliacoes: 0
     })
 
   }
